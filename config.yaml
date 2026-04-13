@@ -1,8 +1,8 @@
 stage1:
   data_path:
-    train_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/Output/data_stream/stage1/stage1_split/stage1_train.csv"
-    val_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/Output/data_stream/stage1/stage1_split/stage1_val.csv"
-    test_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/Output/data_stream/stage1/stage1_split/stage1_test.csv"
+    train_path: "/root/FDCL_v2/Output/data_stream/stage1/stage1_split/stage1_train.csv"
+    val_path: "/root/FDCL_v2/Output/data_stream/stage1/stage1_split/stage1_val.csv"
+    test_path: "/root/FDCL_v2/Output/data_stream/stage1/stage1_split/stage1_test.csv"
 
   data_process:
       feature_cols:
