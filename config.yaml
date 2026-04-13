@@ -1,0 +1,186 @@
+stage1:
+  data_path:
+    train_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/Output/data_stream/stage1/stage1_split/stage1_train.csv"
+    val_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/Output/data_stream/stage1/stage1_split/stage1_val.csv"
+    test_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/Output/data_stream/stage1/stage1_split/stage1_test.csv"
+
+  data_process:
+      feature_cols:
+        - "vibration_ch1"
+        - "vibration_ch2"
+        - "vibration_ch3"
+        - "vibration_ch4"
+      label_col: "class_id"
+
+      window_size: 128
+      step_size: 64
+      label_mode: "mode"
+
+      wavelet: "morl"
+      scales_start: 1
+      scales_end: 32
+
+      time_reduce: "mean"
+      flatten: true
+      return_window_labels: true
+
+      save: true
+      save_path_train: /home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/CWT_MLP_v2/stage1/result/cwt_train.csv
+
+  label_mapping:
+      last_mapping_path: None
+      this_mapping_savepath: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/CWT_MLP_v2/stage1/result/stage1_label_mapping.csv"
+
+  model:
+    name: MLPClassifier
+    hidden_dim: 256
+    dropout: 0.2
+    in_dim: 128
+    num_classes: 5
+
+  loss:
+    name: "CrossEntropyLoss"
+
+  optimizer:
+    name: "Adam"
+    lr: 0.001
+    weight_decay: 0.0001
+
+  training:
+    batch_size: 256
+    epochs: 100
+    lr: 0.001
+    weight_decay: 0.0001
+
+  checkpoint:
+    result_dir: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/CWT_MLP_v2/stage1/result/checkpoints_mlp"
+    latest_ckpt_name: "latest_checkpoint.pt"
+    best_ckpt_name: "best_checkpoint.pt"
+    best_model_name: "best_model_only.pt"
+    curve_name: "training_curves.png"
+
+# -----------------------------------------------------------------------------
+
+stage2:
+  data_path:
+    train_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/Output/data_stream/stage2/stage2_split/stage2_train.csv"
+    val_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/Output/data_stream/stage2/stage2_split/stage2_val.csv"
+    test_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/Output/data_stream/stage2/stage2_split/stage2_test.csv"
+
+  data_process:
+      feature_cols:
+        - "vibration_ch1"
+        - "vibration_ch2"
+        - "vibration_ch3"
+        - "vibration_ch4"
+      label_col: "class_id"
+
+      window_size: 128
+      step_size: 64
+      label_mode: "mode"
+
+      wavelet: "morl"
+      scales_start: 1
+      scales_end: 32
+
+      time_reduce: "mean"
+      flatten: true
+      return_window_labels: true
+
+      save: true
+      save_path_train: /home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/CWT_MLP_v2/stage2/result/cwt_train.csv
+
+  label_mapping:
+      last_mapping_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/CWT_MLP_v2/stage1/result/stage1_label_mapping.csv"
+      this_mapping_savepath: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/CWT_MLP_v2/stage2/result/stage2_label_mapping.csv"
+
+  model:
+    name: MLPClassifier
+    # hidden_dim: 256
+    # dropout: 0.2
+    # in_dim: 128
+    # num_classes: 5
+
+  # loss:
+  #   name: "CrossEntropyLoss"
+
+  optimizer:
+    name: "Adam"
+    lr: 0.001
+    weight_decay: 0.0001
+
+  # training:
+  #   batch_size: 256
+  #   epochs: 100
+  #   lr: 0.001
+  #   weight_decay: 0.0001
+
+  checkpoint:
+    result_dir: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/CWT_MLP_v2/stage2/result/checkpoints_mlp"
+    latest_ckpt_name: "latest_checkpoint.pt"
+    best_ckpt_name: "best_checkpoint.pt"
+    best_model_name: "best_model_only.pt"
+    curve_name: "training_curves.png"
+
+# -----------------------------------------------------------------------------
+
+stage3:
+  data_path:
+    train_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/Output/data_stream/stage3/stage3_split/stage3_train.csv"
+    val_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/Output/data_stream/stage3/stage3_split/stage3_val.csv"
+    test_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/Output/data_stream/stage3/stage3_split/stage3_test.csv"
+
+  data_process:
+      feature_cols:
+        - "vibration_ch1"
+        - "vibration_ch2"
+        - "vibration_ch3"
+        - "vibration_ch4"
+      label_col: "class_id"
+
+      window_size: 128
+      step_size: 64
+      label_mode: "mode"
+
+      wavelet: "morl"
+      scales_start: 1
+      scales_end: 32
+
+      time_reduce: "mean"
+      flatten: true
+      return_window_labels: true
+
+      save: true
+      save_path_train: /home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/CWT_MLP_v2/stage3/result/cwt_train.csv
+
+  label_mapping:
+      last_mapping_path: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/CWT_MLP_v2/stage1/result/stage1_label_mapping.csv"
+      this_mapping_savepath: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/CWT_MLP_v2/stage3/result/stage3_label_mapping.csv"
+
+  model:
+    name: MLPClassifier
+    # hidden_dim: 256
+    # dropout: 0.2
+    # in_dim: 128
+    # num_classes: 5
+
+  # loss:
+  #   name: "CrossEntropyLoss"
+
+  optimizer:
+    name: "Adam"
+    lr: 0.001
+    weight_decay: 0.0001
+
+  # training:
+  #   batch_size: 256
+  #   epochs: 100
+  #   lr: 0.001
+  #   weight_decay: 0.0001
+
+  checkpoint:
+    result_dir: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/CWT_MLP_v2/stage3/result/checkpoints_mlp"
+    latest_ckpt_name: "latest_checkpoint.pt"
+    best_ckpt_name: "best_checkpoint.pt"
+    best_model_name: "best_model_only.pt"
+    curve_name: "training_curves.png"
