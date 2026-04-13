@@ -29,7 +29,7 @@ stage1:
 
   label_mapping:
       last_mapping_path: None
-      this_mapping_savepath: "/home/charles/HZU/Industrial_Software_Testing/Industrial_Software_Testing/FDCL_v2/CWT_MLP_v2/stage1/result/stage1_label_mapping.csv"
+      this_mapping_savepath: "/root/FDCL_v2/CPC/stage1/result/stage1_label_mapping.csv"
 
   model:
     name: MLPClassifier
